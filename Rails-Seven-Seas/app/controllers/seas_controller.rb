@@ -15,7 +15,7 @@ class SeasController < ApplicationController
   def create
     @sea = Sea.create(sea_params)
 
-    redirect_to "/seas/#index"
+    redirect_to "/seas"
     # redirects to its show page.
   #{@sea.id}
   end
@@ -38,8 +38,9 @@ class SeasController < ApplicationController
 
   def destroy
     @sea = Sea.find(params[:id])
+    #byebug
     @sea.destroy
-    redirect_to "/seas/#index"
+    redirect_to "/seas"
   end
 
 
